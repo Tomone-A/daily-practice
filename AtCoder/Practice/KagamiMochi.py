@@ -6,7 +6,8 @@
 n = int(input())
 mochi = []
 
-for i in range(n): # n回だけ入力を受け付ける処理
+# n回だけ入力を受け付ける処理
+for i in range(n): 
     mochi.append(int(input()))
 
 mochimochi = list(set(mochi)) # setは重複を許さないデータ構造
