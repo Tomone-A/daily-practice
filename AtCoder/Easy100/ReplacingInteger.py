@@ -2,22 +2,16 @@
 # 問題URL: https://atcoder.jp/contests/abc161/tasks/abc161_c
 
 n, k = map(int, input().split())
-diff = []
-tmp = 1
-diff.append(n)
+tia = []
 
-while n >= k:
-    n = abs(n*tmp - k) 
-    diff.append(n)
-    tmp += 1
-    if n == k:
-        n = 0
-        break
+n = n % k
+m1 = abs(n - k)
+m2 = abs(m1 - k)
 
-n = abs(n - k) 
-diff.append(n)
+tia.append(m1)
+tia.append(m2)
 
-print(min(diff))
+print(min(tia))
 
-# 動くけど遅い
-# WA1、TLE3
+# AC!(Geminiヒント使用)
+# 割り算の"あまり"、算数においては使わないがちだけどプログラミングにおいてはありえん価値が高い
