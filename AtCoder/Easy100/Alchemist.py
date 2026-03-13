@@ -13,7 +13,7 @@ while(n > 1):
     value.append((value[0] + value[1]) / 2)
     del value[0]
     del value[0]
-    value = sorted(value)
+    value = sorted(value) # 再び昇順に並べ替える
     n = len(value)
 
 print(value[0])
