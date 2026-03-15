@@ -4,15 +4,20 @@
 s = str(input())
 base = []
 
-def check(i):
-    if i == 'A' or i == 'C' or i == 'G' or i == 'T':
-        return 1
+# 文字列の中でACGTが連続する長さの最長を求める
+# 該当すればリストの末尾の値に1を足し、該当しなければリストの末尾に0を追加する
+# リストの値のうち最大のものが答え
+for i in range(len(s)):
+    if s[i] == 'A' or s[i] == 'C' or s[i] == 'G' or s[i] == 'T':
+        if base == []:
+            base.append(1)
+        elif base[-1] == 0 :
+            base.append(1)
+        else:
+            base[-1] += 1
     else:
-        return 0
-    
-for i in s:
-    base.append(check(i)) 
+        base.append(0)
 
-print(base)
+print(max(base))
 
-# 続きは明日
+# AC!
