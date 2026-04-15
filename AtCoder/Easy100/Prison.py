@@ -2,25 +2,22 @@
 # 問題URL: https://atcoder.jp/contests/abc127/tasks/abc127_c
 
 n, m = map(int, input().split())
-cards = []
+l = []
+r = []
 
 for i in range(m):
-    l, r = map(int, input().split())
-    cards.append([l, r])
+    a, b = map(int, input().split())
+    l.append(a)
+    r.append(b)
 
-numbers = []
+left = max(l)
+right = min(r)
 
-for card in cards:
-    for i in range(card[0], card[1] + 1, 1):
-        numbers.append(i)
+# 最も厳しい下限（lの最大）と最も厳しい上限（rの最小）の間を数える
 
-count = 0
+if right - left + 1 >= 0:
+    print(right - left + 1)
+else:
+    print(0)
 
-for i in range(n):
-    tmp = numbers.count(i)
-    if tmp == m:
-        count += 1
-
-print(count)
-
-# 桁数が増えると計算に時間がかかりTLEに
+# AC!(Geminiヒント使用)
