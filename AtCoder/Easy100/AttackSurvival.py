@@ -6,14 +6,15 @@ correct = [ int(input()) for i in range(q) ]
 
 score = k - q # 1回も回答しなかった場合の最低スコアを出しておく
 
-for i in range(1, n+1, 1):
-    tmp = 0
-    for j in correct:
-        if j == i: # 正解数をポイントに加算し、最低スコアと足す
-            tmp += 1
-    if score + tmp > 0: # 最終的なスコアが0点より高いか判定
+correct_counts = [0] * n # 各人の正解数を格納するリスト
+
+for i in correct:
+    correct_counts[i-1] += 1
+
+for i in correct_counts:
+    if score + i > 0:
         print('Yes')
     else:
         print('No')
 
-# TLE
+# AC!
