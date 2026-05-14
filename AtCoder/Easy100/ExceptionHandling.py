@@ -7,9 +7,10 @@ nums_order = sorted(nums, reverse=True)
 # 最大値以外は最大値を出力し、最大値のときは2番目に大きな値を出力する
 
 for num in nums:
-    if num == max(nums):
+    if num == nums_order[0]:
         print(nums_order[1])
     else:
         print(nums_order[0])
 
 # TLEになってしまう
+# 10行目max(nums)をnums_order[0]に書き換えたらAC！
